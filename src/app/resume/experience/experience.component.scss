@@ -1,0 +1,87 @@
+/***********************************************************
+* Project: R.Lloyd Gonzales Resume Website
+* URL: RLloydGonzales.com
+* Contact: rolandolloyd@gmail.com
+* Copyright © 2019 GonzalesDesign
+* Version: 030119
+* Note: CSS for experience.component.
+***********************************************************/
+
+/*--=|• GENERAL STYLING •|=--*/
+@import './../../../styles.scss';
+/*---------------------------------------------*/
+
+/*--= PROFILE SUMMARY SECTION =--*/
+.profile-kontainer {
+    padding-left: 20px;
+    padding-right: 30px;
+    border: 0px solid $rlgColorGreyDark;
+
+    .profile-header {
+
+    }
+
+    .profile-summary {
+
+    }
+}
+/*---------------------------------------------*/
+
+/*--= EXPERIENCE SECTION =--*/
+.experience-kontainer {
+    padding-left: 20px;
+    padding-right: 30px;
+
+    .experience-header {
+
+    }
+
+    .title {
+        font-size: .95em;
+        font-weight: 600;
+        color: #347b98;
+    }
+
+    .sub-title {
+        font-size: .75em;
+        text-transform: uppercase;
+    }
+
+    .role {
+        font-size: .7em;
+        margin-bottom: 1em;
+    }
+
+    .description {
+
+    }
+}
+/*---------------------------------------------*/
+
+/*--= SHARED CLASS =--*/
+
+
+.header {
+    @include fontFamilyWeightSize ($rlg-header-font, 600, 1em);
+    letter-spacing: .05em;
+    // font-size: 1em;
+    // font-weight: 600;
+    padding-top: 30px;
+    color: $rlgColorPrimaryAlternativeMid; //$rlgColorPrimaryQtr;
+}
+
+.parag-descript {
+    font-family: Merriweather;
+    font-style: italic;
+    font-weight: 300;
+    font-size: .85em;
+    line-height: 1.7em;
+    color: $rlgColorGreyMid; //$rlgColorGreyDark;
+    margin-bottom: 2em;
+}
+
+.header-separator {
+    border-bottom: 2px solid $rlgColorGreyLight;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}

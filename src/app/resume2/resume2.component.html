@@ -1,0 +1,302 @@
+<!--=================================-•«÷»•-===============================-->
+
+<!--==================================================|
+    Main Container Wrapper
+|=====================================================-->
+<div class="main-kontainer" id="mainContainerId">
+<!--=================================-•«÷»•-===============================-->
+
+    <!--==============================================|
+        Material Toolbar: Top Navigation Bar
+        This is set to fixed position
+        Top bar shows a horizontal menu for large
+        screens and a hamburger menu for smaller
+    |=================================================-->
+    <mat-toolbar class="top-nav-bar-kontainer">
+        <!--============================================|
+            Show hamburger menu if screen is small
+            else show ngTemplate: top-bar-nav
+        |=============================================-->
+        <div class="hamburger-kontainer" *ngIf="displayHamburger; else elseBlock">
+            <!--====================================|
+                Hamburger menu button
+            |=======================================-->
+            <div class="top-bar-menu" [matMenuTriggerFor]="varMenu">
+                <mat-icon class="top-bar-icon" [matMenuTriggerFor]="varMenu">
+                    {{ aMenuIcons[0] }}
+                </mat-icon>
+                <span class="menu" [style.textTransform]="'uppercase'">
+                    {{ aMenuNames[0] }}
+                </span>
+            </div>
+            <!--====================================|
+                Hamburger pop-up menu content
+            |=======================================-->
+            <mat-menu class="mat-menu-kontainer quick-pop-up-hamburger"
+                #varMenu="matMenu"
+                [overlapTrigger]="false">
+                <button mat-menu-item *ngFor="let menu of aAllMenu; let i = index">
+                    <!-- disabled> -->
+                    <mat-icon class="hamburger-menu-icon"> {{ menu.menuIcon }} </mat-icon>
+                    <a [routerLink]="resume" fragment="{{ menu.targetid }}" class="hamburger-menu-name">
+                        {{ menu.name }}
+                    </a>
+                    <!-- <a href="{{ menu.targetid }}" class="hamburger-menu-name">
+                    {{ menu.name }}
+                </a> -->
+                </button>
+
+                <img class="hamburger-image-background"
+                    src="./../assets/images/gdLogo.jpg"
+                    alt="gd-logo-landscape"/>
+                <br />
+                <span class="pop-up-menu-close">click anywhere to closed</span>
+            </mat-menu>
+        </div>
+
+<!--=================================-•«÷»•-===============================-->
+
+        <!--=======================================================|
+            On larger screen show top bar menu
+        |==========================================================-->
+        <ng-template #elseBlock>
+            <div class="top-bar-nav">
+                <!--=======================================================|
+                    Profile Summary: Top bar menu
+                |==========================================================-->
+                <div class="top-bar-menu" [matMenuTriggerFor]="popProfileSummary">
+                    <mat-icon class="top-bar-icon">
+                        {{ aMenuIcons[1] }} </mat-icon>
+                    <span class="menu">
+                        {{ aMenuNames[1] }}
+                    </span>
+                    <!--=======================================================|
+                        Profile Summary: Quick pop-up
+                    ===================================================-->
+                    <mat-menu class="mat-menu-kontainer" #popProfileSummary="matMenu"
+                        [overlapTrigger]="false">
+                        <div class="profile-quick-pop-kontainer">
+                            <div class="quick-pop-header">{{ aMenuNames[1] }}</div>
+                            <div class="quick-pop-up-profile-summary"
+                            [style.borderRadius.px]="'4'">
+                            {{ profileSummary }}
+                            </div>
+                        </div>
+                    </mat-menu>
+                </div>
+                <!--======================================================|
+                    Education: Top bar menu
+                |=========================================================-->
+                <div class="top-bar-menu" [matMenuTriggerFor]="popEducation">
+                    <mat-icon class="top-bar-icon"> {{ aMenuIcons[3] }} </mat-icon>
+                    <span class="menu">
+                        {{ aMenuNames[3] }}
+                    </span>
+                    <!--======================================================|
+                        Education: Quick pop-up
+                    |=========================================================-->
+                    <mat-menu class="mat-menu-kontainer"
+                        #popEducation="matMenu"
+                        [overlapTrigger]="false">
+                        <div class="quick-pop-header">{{ aMenuIcons[3] }}</div>
+                        <div *ngFor="let education of aEducationData; let i = index"
+                            class="quick-pop-up-education">
+                            <hr>
+                            <div class="edu-school">{{ education.school }}</div>
+                            <div class="edu-location">{{ education.location }}</div>
+                        </div>
+                    </mat-menu>
+                </div>
+                <!--====================================================|
+                    Social Medias: Top bar menu
+                |=======================================================-->
+                <div class="top-bar-menu" [matMenuTriggerFor]="popSocial">
+                    <mat-icon class="top-bar-icon"> {{ aMenuIcons[4] }} </mat-icon>
+                    <span class="menu">
+                        {{ aMenuNames[4] }}
+                    </span>
+                    <!--====================================================|
+                        Social Medias: Quick pop-up
+                    |=======================================================-->
+                    <mat-menu class="mat-menu-kontainer quick-pop-header"
+                        #popSocial="matMenu"
+                        [overlapTrigger]="false">
+                        <div *ngFor="let social of aSocialMediaData; let i = index"
+                            class="quick-pop-up-social">
+                            <hr />
+                            <div class="{{ social.icon }}"
+                                (click)="fOpenXLinks(social.linkUrl)"
+                                [style.cursor]= 'social.cursor'>
+                                <span class="social-icon-title"> {{ social.media }} </span>
+                            </div>
+                        </div>
+                    </mat-menu>
+                </div>
+                <!--====================================================|
+                    Quick pop-up Technologies
+                |=======================================================-->
+                <div class="top-bar-menu" [matMenuTriggerFor]="popTech">
+                    <mat-icon class="top-bar-icon"> {{ aMenuIcons[5] }} </mat-icon>
+                    <span class="menu">
+                        {{ aMenuNames[5] }}
+                    </span>
+
+                    <mat-menu class="mat-menu-kontainer quick-pop-header"
+                            #popTech="matMenu"
+                            [overlapTrigger]="false"
+                            >
+                        <div *ngFor="let technology of aTechnologiesData; let i = index"
+                            class="quick-pop-up-tech">
+                            <hr />
+                            <div class="{{ technology.icon }}">
+                                <span class="tech-icon-title"> {{ technology.tech }} </span>
+                            </div>
+                        </div>
+                    </mat-menu>
+                </div>
+            </div>
+        </ng-template>
+
+    </mat-toolbar>
+
+    <!--==============================================|
+        content-kontainer holds all other content
+    |=================================================-->
+    <div class="content-kontainer">
+    <!--====================================================|
+        Logo area: Container takes the whole left side
+    |=======================================================-->
+    <div class="left-bar-kontainer">
+        <div *ngIf="showLogo" class="contact-logo-kontainer">
+            <!-- TEST  ROUTER: logo link to resume.component -->
+            <!-- <div class="contact-logo"> -->
+            <a [routerLink]="['/resume']" class="contact-logo"></a>
+            <!-- </div> -->
+        </div>
+    </div>
+    <!--========================-•«÷»•-========================-->
+    <div class="right-bar-kontainer">
+        <!--========================================|
+            kontact-kontainer: Holds contact data
+        |===========================================-->
+        <div class="kontact-kontainer"
+            *ngFor="let contact of aAllContactInfoData; let i = index"
+            [style.display]="'flex'">
+            <!-- <div class="bg-color"></div>
+            <div class="bg-image"></div> -->
+            <div class="name-profession">
+                <div class="contact-name">{{ contact.name }}</div>
+                <div class="contact-profession">{{ contact.profession }}</div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-address">
+                <span class="contact-street">{{ contact.address.street }}</span><br />
+                <span class="contact-city">{{ contact.address.city }}</span><br />
+                <span class="contact-state-zip">
+                    {{ contact.address.state }}, {{ contact.address.zip }}</span>
+                </div>
+                <div class="contact-phone">{{ contact.phone }}</div>
+                <div class="contact-email">{{ contact.email }}</div>
+            </div>
+        </div>
+<!--=================================-•«÷»•-===============================-->
+
+        <!--=================================================================|
+            Profile Summary: Show these on small screen. Hide on large screen
+        |====================================================================-->
+        <div *ngIf="showMobile" class="mobile">
+            <div class="profileSummary article-header">Profile Summary</div>
+            <!-- <hr class="hr1"> -->
+            <!-- <span class="experience-target" id="experienceId"></span> -->
+            <div class="mobile-profile-summary-kontainer">
+                <div class="profile-summary paragraph-text">{{ profileSummary }}</div>
+            </div>
+        </div>
+        <!--========================-•«÷»•-========================-->
+
+        <!--=================================================================|
+            Experience: List of experience
+        |====================================================================-->
+        <span class="experience-kontainer" id="experienceId"></span>
+        <div class="experience-header article-header">Experience</div>
+        <!-- <hr class="hr1"> -->
+        <div class="experience-list"
+            *ngFor="let experience of aAllExperienceData; let i = index">
+            <div class="exp-title">{{ experience.title }}</div>
+            <div class="exp-sub-title">{{ experience.subTitle }}</div>
+            <div class="exp-sub-locale">{{ experience.locale }}</div>
+            <div class="exp-role">{{ experience.role }}</div>
+            <div class="exp-description paragraph-text">
+                {{ experience.description[0].paragraph }} <br />
+                {{ experience.description[1].paragraph }}
+            </div>
+            <br />
+        </div>
+<!--=================================-•«÷»•-===============================-->
+
+        <!--====================================================|
+            Show these on small screen. Hide on large screen
+        |=======================================================-->
+        <div *ngIf="showMobile" class="mobile">
+        <!--====================================================|
+            Education Container
+        |=======================================================-->
+        <div class="mobile-edu-kontainer" id="educationId">
+            <div class="education-header article-header">Education</div>
+            <div *ngFor="let education of aEducationData; let i = index"
+                class="mobile-education">
+                <hr />
+                <div class="edu-school">{{ education.school }}</div>
+                <div class="edu-location">{{ education.location }}</div>
+            </div>
+        </div>
+        <br />
+        <!--====================================================|
+            Social Medias Container
+        |=======================================================-->
+        <div class="mobile-social-kontainer" id="socialMediasId">
+          <div class="social-header article-header">Social Medias</div>
+          <div *ngFor="let social of aSocialMediaData; let i = index"
+                class="mobile-social">
+            <hr />
+            <div class="{{ social.icon }} icons"
+                id="social-icon- {{i}}"
+                [style.cursor]= 'social.cursor'
+                (click)="fOpenXLinks(social.linkUrl)">
+              <span class="social-icon-title"> {{ social.media }} </span>
+            </div>
+          </div>
+        </div>
+        <br />
+        <!--====================================================|
+            Technologies Container
+        |=======================================================-->
+        <div class="mobile-tech-kontainer" id="technologiesId">
+          <div class="tech-header article-header">Technologies</div>
+          <div *ngFor="let technology of aTechnologiesData; let i = index"
+            class="mobile-tech">
+            <hr />
+            <div class="{{ technology.icon }}">
+              <span class="tech-icon-title"> {{ technology.tech }} </span>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+      <!--========================-•«÷»•-========================-->
+      <!-- <div></div> -->
+      <!--====================================================|
+          Footer Area
+      |=======================================================-->
+      <div class="page-footer"></div>
+    </div>
+    <!-- end of right-bar-kontainer -->
+
+    <!--========================-•«÷»•-========================-->
+
+    <!-- </div> end of floating-content-kontainer -->
+
+    <!--========================-•«÷»•-========================-->
+  </div>
+</div>

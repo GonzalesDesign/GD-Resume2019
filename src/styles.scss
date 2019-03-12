@@ -1,0 +1,224 @@
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/*----------------------------------------=
+=---=|          Import: CDN          |=---=
+=-----------------------------------------*/
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption');
+@import url('https://fonts.googleapis.com/css?family=Ovo');
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+
+/*---=| Font families |=---*/
+$rlg-primary-font: "Open Sans"; // Montserrat Open Sans
+$rlg-paragraph-font: "Merriweather";
+$rlg-header-font: "Oswald";
+$rlg-round-font: "Lato";
+$rlg-open-font: "Open Sans";
+$rlg-pt-font: "PT Sans";
+$rlg-robot-font: "Roboto";
+$rlg-pt-caption-font: "PT Sans Caption";
+$rlg-icons-font: "Material Icons";
+
+/*---=| Font Mixin |=---*/
+@mixin fontFamilyWeightSize ($fontFam, $fontWt, $fontSz){
+  font-family: $fontFam;
+  font-weight: $fontWt;
+  font-size: $fontSz;
+  // to use: @include fontFamilyWeightSize ($rlg-primary-font, 600, 1em);
+}
+
+/*---=| Compound Color Schemes or Split Complementary |=---*/
+
+/*--= PRIMARY =--*/
+$rlgColorPrimary: #347B98;
+$rlgColorPrimaryMid: lighten($rlgColorPrimary, 10%); // rgb(84, 163, 194);
+$rlgColorPrimaryQtr: lighten($rlgColorPrimary, 20%); // rgb(121, 206, 240);
+$rlgColorPrimaryLite: lighten($rlgColorPrimary, 50%); // rgb(121, 206, 240);
+
+/*--= SECONDARY =--*/
+$rlgColorSecondary: rgb(254, 68, 0); //#fe5900
+$rlgColorSecondaryMid: lighten($rlgColorSecondary, 15%);
+$rlgColorSecondaryDrk: darken($rlgColorSecondary, 5%);
+
+/*--= TERTIARY =--*/
+// $rlgColorTertiary: #92d11f; // #92d11f  #B2D732
+$rlgColorTertiary: #a6f615; // #92d11f  #B2D732
+$rlgColorTertiaryMid: lighten($rlgColorTertiary, 30%); //#cfe876;
+$rlgColorTertiaryQtr: lighten($rlgColorTertiary, 45%);
+
+/*--= QUATERNARY =--*/
+$rlgColorPrimaryAlternative: #00a4f9;
+$rlgColorPrimaryAlternativeMid: lighten($rlgColorPrimary, 10%);
+$rlgColorLight: $rlgColorTertiaryQtr; // rgb(207, 232, 118); //#F0F7D4;
+
+/*--= shades of greys =--*/
+$rlgColorDark: #033346;
+$rlgColorDarkMid: lighten($rlgColorDark, 5%);
+$rlgColorDarkQtr: lighten($rlgColorDark, 25%);
+$rlgColorGreyDark:  rgb(78, 83, 85);
+$rlgColorGreyMid:  rgb(117, 127, 131);
+$rlgColorGreyQtr:  rgb(176, 180, 182);
+$rlgColorGreyLight:  rgb(221, 224, 225);
+
+/*--= texts shadow variables =--*/
+$text-dark-shadow: 1px 1px $rlgColorDark; // $material-color-grey-800;
+$text-mid-shadow: 1px 1px rgba($rlgColorDark, .5);
+$text-light-shadow: 1px 1px rgba($rlgColorDark, .25);
+$text-white-shadow: 1px 1px rgba(white, .15);
+$text-shadow: 1px 1px 2px rgba($rlgColorDark,.25);
+$box-shadow: 3px 1px 6px rgba($rlgColorDark,.25);
+$box-shadow2: 1px 3px 6px rgba($rlgColorDark,.25);
+
+/*---=| Borders for testing variables |=---*/
+$borderForTesting: 0px solid rgb(6, 161, 245);
+$redBorderForTesting: 0px solid rgb(245, 1, 1);
+$greyBorderForTesting: 0px solid rgb(91, 86, 91);
+
+/*---=| HTML Layout |=---*/
+html, body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: $rlg-primary-font;
+  margin: 0;
+  padding-top: 0.1px; // Prevent header h1 margin from pushing body down
+}
+
+//body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+// p {
+//     @include fontFamilyWeightSize ($rlg-paragraph-font, 300, .9em);
+//     line-height: 1.6;
+// }
+
+/*--= SHARED CLASS =--*/
+
+// mat-icon {
+//   background-repeat: no-repeat;
+//   font-size: 22px;
+//   height: 30px;
+//   width: 30px;
+//   border: 1px solid;
+//   border-radius: 4em;
+//   /* align-content: center; */
+//   text-align: center;
+//   /* padding-top: .2em; */
+//   line-height: inherit;
+// }
+
+.mat-icon {
+    color: $rlgColorTertiary;
+}
+
+/*=====================================================|
+    material-icons: for all the unspecified icons
+|======================================================*/
+.material-icons{
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px; //24px;  /* Preferred icon size */
+  // display: inline-block;
+  line-height: 1.2;
+  // text-transform: none;
+  // letter-spacing: normal;
+  // word-wrap: normal;
+  // white-space: nowrap;
+  // direction: ltr;
+  border-radius: 4em;
+  border: 1px solid $rlgColorPrimaryLite; // $rlgColorGreyQtr;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  // padding-top: 6px;
+  // background-color: white; // $rlgColorGreyLight;
+  // text-shadow: $text-shadow;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+  // color: $rlgColorSecondary;
+//   color: $rlgColorTertiary !important;
+  box-shadow: $box-shadow2;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/*=====================================================|
+    Hiding the scrollbar
+|======================================================*/
+::-webkit-scrollbar {
+  /* This is the magic bit for WebKit */
+  display: none;
+}
+
+
+/*=====================================================|
+    cdk-overlay-pane
+|======================================================*/
+.cdk-overlay-pane {
+    // padding-top: 9px;
+    // padding: inherit;
+    // width: 500px;
+    // width: 300px;
+}
+/*=====================================================|
+    mat-menu-panel:
+|======================================================*/
+.mat-menu-panel {
+    // padding-top: 16px !important;
+    max-width: 100% !important;
+    border-radius: 0 0 12px 2px !important;
+}
+
+/*=====================================================|
+    Hamburger Menu
+|======================================================*/
+.hamburger-menu-name {
+    @include fontFamilyWeightSize($rlg-primary-font, 600, 1em);
+    color: $rlgColorGreyMid;
+    top: 10px;
+}
+
+/*=====================================================|
+    Icons for the pop up hamburger menu
+|======================================================*/
+.hamburger-menu-icon{
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.2em;
+    border-radius: 4em;
+    border: 1px solid $rlgColorPrimaryLite; // $rlgColorGreyQtr;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    color: $rlgColorSecondary !important;
+    box-shadow: $box-shadow2;
+}
+
+// .top-bar-icon {
+// 	color: $rlgColorTertiary !important;
+// }
+
+/*---=(resume.component )=---*/
+.resume-icons {
+    color: $rlgColorPrimaryQtr !important;
+}
+/*---=(resume.experience.component )=---*/
+.article-icons{
+    color: $rlgColorSecondary !important;
+}

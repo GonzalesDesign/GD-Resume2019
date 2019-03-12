@@ -1,0 +1,41 @@
+
+<div class="profile-kontainer">
+
+  <div class="header profile-header header-separator">
+    <i class="material-icons article-icons">face</i>
+    PROFILE SUMMARY:
+  </div>
+
+  <div *ngFor="let cData of allContactInfoData; let i=index">
+    <div class="profile-summary parag-descript">
+      {{ cData.profileSummary }}
+    </div>
+  </div>
+
+</div>
+
+<div class="experience-kontainer">
+
+  <div class="header experience-header header-separator">
+    <i class="material-icons article-icons">work</i>
+    EXPERIENCE:
+  </div>
+
+  <div *ngFor="let xData of allExperienceData; let i=index">
+    <div class="title">
+      {{ xData.title }}
+    </div>
+    <div class="sub-title">
+      {{ xData.subTitle }}
+    </div>
+    <div class="role">
+      {{ xData.role }}
+    </div>
+    <div class="description parag-descript">
+      {{ xData.description[0].paragraph }} <br>
+      {{ xData.description[1].paragraph }}
+  </div>
+
+</div>
+
+

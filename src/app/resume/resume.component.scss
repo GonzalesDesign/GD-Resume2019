@@ -1,0 +1,187 @@
+
+/*=---=|• GENERAL STYLING •|=---=*/
+@import './../../styles.scss';
+
+.main-kontainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-self: center;
+    // width: 80vw;
+    max-width: 1000px;
+    min-width: 681px;
+    background-color: $rlgColorTertiaryQtr; //#f7fcef;
+    // border: 0px solid rgba(200, 100, 100, .5);
+    box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, .25);
+
+    .top-kontainer {
+        display: flex;
+        flex-direction: row;
+        height: 150px;
+        background-color: $rlgColorPrimary;
+        background-image: url("./../../assets/images/resume-background.jpg");
+        background-repeat: no-repeat;
+        background-position-x: -4px;
+        background-position-y: -4px;
+        background-size: 120%;
+        box-shadow: $box-shadow2;
+
+        .top-left-kontainer {
+            display: block;
+            width: 30%;
+            min-width: 250px;
+            border-bottom: 10px solid #ccdfaa;
+        }
+
+        .top-main-kontainer {
+            display: block;
+            // border-bottom-color: #347B98;
+            // border-bottom-width: 2px;
+            width: 70%;
+            min-width: 430px;
+            // position: relative;
+            // top: -8px;
+            border: 0px solid purple;
+            border-bottom: 10px solid $rlgColorSecondary;
+
+
+            .title {
+                @include fontFamilyWeightSize ($rlg-header-font, 300, 2em);
+                color: $rlgColorTertiary;
+                margin-top: 40px;
+                padding-left: 20px;
+                line-height: 1.1em;
+                text-shadow: $text-shadow;
+            }
+            .sub-title {
+                @include fontFamilyWeightSize ($rlg-primary-font, 400, .9em);
+                color: $rlgColorTertiaryQtr;
+                line-height: 1.4em;
+                padding-left: 20px;
+            }
+        }
+    }
+
+    /*--= Contains sidebar and main area =--*/
+    .kontent-kontainer {
+        display: flex;
+        flex-direction: row;
+
+        .header {
+            // @include fontFamilyWeightSize ($rlg-header-font, 300, 1em);
+            letter-spacing: .05em;
+            // font-size: 1em;
+            // font-weight: 600;
+            // padding-top: 30px;
+            // color: $rlgColorPrimaryQtr;
+        }
+
+        /*--= Left sidebar container =--*/
+        .left-kontainer {
+            font-family: $rlg-primary-font;
+            width: 30%;
+            min-width: 250px;
+            margin: 0px;
+            background-color: $rlgColorPrimary;
+            box-shadow: $box-shadow;
+            border: 0px solid cyan;
+
+            .contact-kontainer {
+                text-transform: uppercase;
+                text-align: left;
+                letter-spacing: .05em;
+
+                /*--= Contact Info =--*/
+                .info-kontainer {
+                    margin: 0px;
+                    padding: 10% 0 10% 10%;
+                    // padding-left: 10%;
+                    // text-transform: uppercase;
+                    // border-radius: 0px;
+                    // text-align: left;
+                    // letter-spacing: .05em;
+                    color: #effadc;
+                    border: 0px solid yellowgreen;
+
+                    .contact-header {
+                        font-size: 1em;
+                        // padding-top: 30px;
+                    }
+                    .contact {
+                        font-size: .65em;
+                        padding-top: 10px;
+                        // padding-bottom: 10px;
+                    }
+                }
+
+                /*--= Education =--*/
+                .edu-kontainer {
+                    background-color: $rlgColorTertiaryQtr;
+                    margin: 0px;
+                    padding: 10% 0 10% 10%;
+                    // padding-left: 10%;
+                    // padding-top: 10%;
+                    // padding-bottom: 10%;
+                    // border-radius: 0px;
+                    // text-align: left;
+                    // letter-spacing: .05em;
+                    // text-transform: uppercase;
+                    color: $rlgColorGreyMid;
+                    border: 0px solid red;
+
+                    .education-header {
+                        font-size: 1em;
+                        // padding-top: 30px;
+                    }
+                    .school {
+                        font-size: .65em;
+                        padding-top: 10px;
+                        // padding-bottom: 20px;
+                    }
+                }
+
+                /*--= Social =--*/
+                .social-kontainer {
+                    margin: 0px;
+                    padding: 10% 0 10% 10%;
+                    text-align: left;
+                    letter-spacing: .05em;
+                    color: $rlgColorTertiaryQtr;
+                    background-color: $rlgColorDark; //$rlgColorSecondaryMid; //$rlgColorPrimaryMid;
+                    border: 0px solid cyan;
+
+                    .social-header {
+                        font-size: 1em;
+                        text-transform: uppercase;
+                    }
+                    .socials {
+                        padding-top: 10px;
+                    }
+                }
+
+                /*--= Technology =--*/
+                .tech-kontainer {
+                    margin: 0px;
+                    padding: 10% 0 10% 10%;
+                    text-align: left;
+                    letter-spacing: .05em;
+                    color: $rlgColorTertiaryQtr;
+                    // background-color: $rlgColorPrimaryMid;
+                    border: 0px solid cyan;
+
+                    .tech-header {
+                        font-size: 1em;
+                        text-transform: uppercase;
+                    }
+                    .tech {
+                        padding-top: 10px;
+                    }
+                }
+            }
+        .fab {
+            padding-right: .3em;
+        }
+        }
+    }
+
+}
