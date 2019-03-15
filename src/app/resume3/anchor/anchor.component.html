@@ -1,0 +1,100 @@
+
+<!-- <mat-toolbar class="gsap-top-nav-bar-kontainer" id="r3NavBarKontainerX"> -->
+    <div class="gsapBtn"
+        [style.border]="'1px solid red'"
+        [style.marginRight.em]="'2'"
+        [style.width.em]="'30'"
+        [style.position]="'fixed'"
+        [style.backgroundColor]="'teal'"
+        [style.zIndex]="'100'"
+        >
+        <!-- btn1 -->
+        <a class="title-linkX"
+            [style.marginRight.em]="'2'"
+            (click)="onSlideUp()">
+            <mat-icon class="top-bar-icon"
+                [style.backgroundColor]="'black'">
+                {{ aMenuIcons[4] }}</mat-icon>
+        </a>
+        <!-- btn2 -->
+        <a class="title-linkX"
+            [style.marginRight.em]="'2'"
+            (click)="onSlideDown()">
+            <mat-icon class="top-bar-icon"
+                [style.backgroundColor]="'grey'">
+                {{ aMenuIcons[4] }}</mat-icon>
+        </a>
+        <!-- btn3 -->
+        <a class="title-linkX"
+            [style.marginRight.em]="'2'"
+            (click)="onSlideLeft()">
+            <mat-icon class="top-bar-icon"
+                [style.backgroundColor]="'red'">
+                {{ aMenuIcons[4] }}</mat-icon>
+        </a>
+        <!-- btn4 -->
+        <a class="title-linkX"
+            [style.marginRight.em]="'2'"
+            (click)="onSlideRight()">
+            <mat-icon class="top-bar-icon"
+                [style.backgroundColor]="'blue'">
+                {{ aMenuIcons[4] }}</mat-icon>
+        </a>
+
+        <!-- section 1 -->
+        <a  [style.marginRight.em]="'2'" [style.cursor]="'pointer'" (click)="onScrollTo2('#section1')">
+            <mat-icon class="icon" [style.backgroundColor]="'purple'">{{ aMenuIcons[1] }}</mat-icon>
+            <span [style.fontFamily]="'open sans'" [style.color]="'beige'"> S•1 </span>
+        </a>
+        <!-- section 2 -->
+        <a  [style.marginRight.em]="'2'" [style.cursor]="'pointer'" (click)="onScrollTo2('#section2')">
+            <mat-icon class="icon" [style.backgroundColor]="'green'">{{ aMenuIcons[2] }}</mat-icon>
+            <span [style.fontFamily]="'open sans'" [style.color]="'beige'"> S•2 </span>
+        </a>
+        <!-- section 2 -->
+        <a  [style.marginRight.em]="'2'" [style.cursor]="'pointer'" (click)="onScrollTo2('#section3')">
+            <mat-icon class="icon" [style.backgroundColor]="'orange'">{{ aMenuIcons[3] }}</mat-icon>
+            <span [style.fontFamily]="'open sans'" [style.color]="'beige'"> S•3 </span>
+        </a>
+
+    </div>
+<!-- </mat-toolbar> -->
+
+<div class="anchor-kontainer" id="anchorKontainerId"
+    [style.border]="'1px solid'">
+    <div *ngFor="let experience of aAllExperienceData; let i = index"
+        class="content" [ngStyle]="myStyles">
+        {{experience.description[0].paragraph}}
+    </div>
+</div>
+
+<div class="content">
+    <h2 id="section1">Section 1</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nibh quam, egestas eu eros molestie, eleifend viverra augue. Suspendisse potenti. Quisque commodo consectetur quam, non pretium orci viverra at. Maecenas eget iaculis nunc. </p>
+    <p>Praesent at pellentesque augue. Nunc sed ullamcorper risus. Duis tincidunt consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    <p>Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus</p>
+
+    <h2 id="section2">Section 2</h2>
+    <p>consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa.</p>
+    <p>Praesent at pellentesque augue. Nunc sed ullamcorper risus. Duis tincidunt consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    <p>Mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p>
+
+    <h2 id="section3">Section 3</h2>
+    <p>Praesent at pellentesque augue. Nunc sed ullamcorper risus. Duis tincidunt consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementes, nascetur ridiculus mus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nibh quam, egestas eu eros molestie, eleifend viverra augue. Suspendisse potenti. Quisque commodo consectetur quam, non pretium orci viverra at. Maecenas eget iaculis nunc. </p>
+    <p>Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa.</p>
+      <p>consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa.</p>
+    <p>Praesent at pellentesque augue. Nunc sed ullamcorper risus. Duis tincidunt consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    <p>Mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p>
+      <p>consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa.</p>
+    <p>Praesent at pellentesque augue. Nunc sed ullamcorper risus. Duis tincidunt consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    <p>Mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p>
+      <p>Mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p>
+      <p>consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa.</p>
+    <p>Praesent at pellentesque augue. Nunc sed ullamcorper risus. Duis tincidunt consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    <p>Mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p>
+      <p>Mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p>
+      <p>consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa.</p>
+    <p>Praesent at pellentesque augue. Nunc sed ullamcorper risus. Duis tincidunt consectetur condimentum. Suspendisse pharetra purus urna, ac pretium mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    <p>Mi elementum et. Praesent dui nibh, ullamcorper in justo sed, volutpat cursus orci. Etiam vitae sodales massa. Cum sociis natoque penatibus et magnis dis parturient montes,</p>
+    </div>

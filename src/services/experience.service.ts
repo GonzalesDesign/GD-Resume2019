@@ -13,6 +13,7 @@ export interface ExperienceDataInterface {
     email: string;
     imagePath: string;
     menu: string;
+    shortName: string;
         menuIcon: string;
         targetid: string;
     education: string;

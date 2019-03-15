@@ -79,6 +79,8 @@ $borderForTesting: 0px solid rgb(6, 161, 245);
 $redBorderForTesting: 0px solid rgb(245, 1, 1);
 $greyBorderForTesting: 0px solid rgb(91, 86, 91);
 
+$calcScreenWidth: calc(80vw - 20px);
+
 /*---=| HTML Layout |=---*/
 html, body {
   height: 100%;
@@ -88,6 +90,7 @@ html, body {
   margin: 0;
   padding-top: 0.1px; // Prevent header h1 margin from pushing body down
 }
+
 
 //body { margin: 0; font-family: 'Roboto', sans-serif; }
 

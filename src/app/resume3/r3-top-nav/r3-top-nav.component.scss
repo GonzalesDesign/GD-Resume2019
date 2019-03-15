@@ -1,0 +1,75 @@
+
+/*|=============================================|
+    GENERAL STYLING
+|===============================================|*/
+@import './../../../styles.scss';
+
+    /*==================================================|
+        Top Material Toolbar • Top Navigation Container
+    |===================================================*/
+    mat-toolbar.top-nav-bar-kontainer {
+        display:  flex;
+        // display: block; // flex;
+        // justify-content: center;
+        position: fixed;
+        top: -20px;
+        transition: top 0.4s;
+        // transition: all .2s ease-in-out;
+        // padding-top: 20px;
+        //   width: 90vw;
+        // max-width: 1000px;
+        overflow: hidden;
+        background-color: $rlgColorPrimary;
+        height: 100px;
+        box-shadow: $box-shadow2;
+        z-index: 100;
+        border: 1px solid yellowgreen;
+        // opacity: .5;
+    }
+    .top-bar-nav {
+        @include fontFamilyWeightSize($rlg-primary-font, 600, 0.7em);
+        letter-spacing: 0.1em;
+        width: 100%;
+        top: 0px;
+        color: beige;
+        display: flex;
+        justify-content: center;
+        border: 0px solid red;
+
+        // .menu {
+        //     padding-left: 10px;
+        //     padding-right: 30px;
+        //     cursor: pointer;
+        //     color: antiquewhite;
+        //     border: 0px solid white;
+        //     //   background-size: cover;
+        // }
+    }
+    /*--===| material icons |===--*/
+    .top-bar-icon {
+        color: $rlgColorTertiary !important;
+        border: 1px solid $rlgColorTertiary;
+        line-height: 1.75em;
+        border-radius: 1.75em;
+        width: 1.75em;
+        height: 1.75em;
+        text-shadow: $text-shadow;
+        box-shadow: $box-shadow;
+    }
+    .menu {
+        padding-left: 10px;
+        padding-right: 30px;
+        cursor: pointer;
+        color: antiquewhite;
+        text-transform: uppercase;
+        border: 0px solid white;
+        //   background-size: cover;
+    }
+    .top-bar-menu {
+        display: flex;
+        cursor: pointer;
+        border: 0px solid magenta;
+        :hover {
+            color: $rlgColorTertiary;
+        }
+    }

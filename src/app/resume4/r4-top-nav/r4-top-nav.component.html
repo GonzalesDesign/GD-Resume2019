@@ -1,0 +1,36 @@
+<div class="r4-top-nav-kontainer" id="r4TopNavKontainer">
+    <!-- <div class="r4-top-nav"> -->
+
+    <div class="logo"></div>
+
+        <!--============================================|
+            nav
+        |=============================================-->
+    <div class="r4-btn-kontainer">
+
+        <div class="r4-btns"
+            *ngFor="let menu of aAllMenu; let i = index"
+            (click)="onScrollTo2(menu.targetid)">
+
+            <!--=| Show full-width screen vavigation |=-->
+            <div *ngIf="fullWidthScreen" class="full-width-screen">
+                <mat-icon class="r4-btn-icons">{{ menu.menuIcon }}
+                </mat-icon>
+                <div class="r4-btn-names">{{ menu.name }}</div>
+            </div>
+
+            <!--=| Show mid-width screen vavigation |=-->
+            <div *ngIf="midWidthScreen">
+                <div class="r4-btn-names">{{ menu.name }}</div>
+            </div>
+
+             <!--=| Show small-width screen vavigation |=-->
+            <div *ngIf="smallWidthScreen">
+                <div class="r4-btn-names">{{ menu.shortName }}</div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- </div> -->
+</div>

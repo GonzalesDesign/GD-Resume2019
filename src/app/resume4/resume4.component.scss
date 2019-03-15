@@ -1,0 +1,14 @@
+/*|=============================================|
+    GENERAL STYLING
+|===============================================|*/
+@import './../../styles.scss';
+
+.r4-main-kontainer {
+    height: auto;
+    // width: auto;
+    min-width: 500px;
+    width: $calcScreenWidth;
+    // width: calc(100vw - 20em);
+    border: 1px solid grey;
+    background: beige;
+}

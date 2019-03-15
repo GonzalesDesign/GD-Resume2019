@@ -3,7 +3,9 @@
 <!--==================================================|
     Main Container Wrapper
 |=====================================================-->
-<div class="main-kontainer" id="mainContainerId">
+<div class="main-kontainer" id="profileId">
+    <!-- id="profileId"
+        id="mainContainerId"-->
 <!--=================================-•«÷»•-===============================-->
 
     <!--==============================================|
@@ -11,16 +13,16 @@
         This is set to fixed position
         Top bar shows a horizontal menu for large
         screens and a hamburger menu for smaller
-    |=================================================-->
-    <mat-toolbar class="top-nav-bar-kontainer">
+    |================================================-->
+    <mat-toolbar class="top-nav-bar-kontainer" id="topNavBarKontainerId">
         <!--============================================|
             Show hamburger menu if screen is small
             else show ngTemplate: top-bar-nav
         |=============================================-->
         <div class="hamburger-kontainer" *ngIf="displayHamburger; else elseBlock">
-            <!--====================================|
+            <!--=======================================|
                 Hamburger menu button
-            |=======================================-->
+            |========================================-->
             <div class="top-bar-menu" [matMenuTriggerFor]="varMenu">
                 <mat-icon class="top-bar-icon" [matMenuTriggerFor]="varMenu">
                     {{ aMenuIcons[0] }}
@@ -38,12 +40,29 @@
                 <button mat-menu-item *ngFor="let menu of aAllMenu; let i = index">
                     <!-- disabled> -->
                     <mat-icon class="hamburger-menu-icon"> {{ menu.menuIcon }} </mat-icon>
-                    <a [routerLink]="resume" fragment="{{ menu.targetid }}" class="hamburger-menu-name">
+
+                    <!--==========================================================================|
+                        :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                        Anchor scrolling: using method with GSAP
+                    |=================================================-->
+                    <a  class="hamburger-menu-name"
+                        (click)="onScrollTo2(menu.targetid)">
                         {{ menu.name }}
                     </a>
+                    <!--==============================================|
+                        Anchor scrolling: using routerlink
+                    |=================================================-->
+                    <!-- <a [routerLink]="resume" fragment="{{ menu.targetid }}" class="hamburger-menu-name">
+                        B: {{ menu.name }}
+                    </a> -->
+                    <!--==============================================|
+                        Anchor scrolling: using href
+                    |=================================================-->
                     <!-- <a href="{{ menu.targetid }}" class="hamburger-menu-name">
-                    {{ menu.name }}
-                </a> -->
+                        {{ menu.name }}
+                    </a> -->
+                    <!--=::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                    |==========================================================================|-->
                 </button>
 
                 <img class="hamburger-image-background"
@@ -182,10 +201,12 @@
         <div class="kontact-kontainer"
             *ngFor="let contact of aAllContactInfoData; let i = index"
             [style.display]="'flex'">
-            <!-- <div class="bg-color"></div>
-            <div class="bg-image"></div> -->
             <div class="name-profession">
-                <div class="contact-name">{{ contact.name }}</div>
+                <div class="contact-name">
+                    <a [routerLink]="['/resume4']" class="contact-link">
+                        {{ contact.name }}
+                    </a>
+                </div>
                 <div class="contact-profession">{{ contact.profession }}</div>
             </div>
             <div class="contact-info">
@@ -205,7 +226,7 @@
             Profile Summary: Show these on small screen. Hide on large screen
         |====================================================================-->
         <div *ngIf="showMobile" class="mobile">
-            <div class="profileSummary article-header">Profile Summary</div>
+            <div class="profileSummary article-header" >Profile Summary</div>
             <!-- <hr class="hr1"> -->
             <!-- <span class="experience-target" id="experienceId"></span> -->
             <div class="mobile-profile-summary-kontainer">
@@ -217,7 +238,7 @@
         <!--=================================================================|
             Experience: List of experience
         |====================================================================-->
-        <span class="experience-kontainer" id="experienceId"></span>
+        <span class="experience2-kontainer" id="experienceId"></span>
         <div class="experience-header article-header">Experience</div>
         <!-- <hr class="hr1"> -->
         <div class="experience-list"
@@ -276,7 +297,7 @@
           <div *ngFor="let technology of aTechnologiesData; let i = index"
             class="mobile-tech">
             <hr />
-            <div class="{{ technology.icon }}">
+            <div class="{{ technology.icon }} icons">
               <span class="tech-icon-title"> {{ technology.tech }} </span>
             </div>
           </div>

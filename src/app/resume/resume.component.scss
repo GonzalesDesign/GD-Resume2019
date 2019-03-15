@@ -46,13 +46,17 @@
 
 
             .title {
-                @include fontFamilyWeightSize ($rlg-header-font, 300, 2em);
-                color: $rlgColorTertiary;
                 margin-top: 40px;
                 padding-left: 20px;
                 line-height: 1.1em;
                 text-shadow: $text-shadow;
+                .title-link {
+                    @include fontFamilyWeightSize ($rlg-header-font, 300, 2em);
+                    color: $rlgColorTertiary;
+                    text-decoration-line: none;
+                }
             }
+
             .sub-title {
                 @include fontFamilyWeightSize ($rlg-primary-font, 400, .9em);
                 color: $rlgColorTertiaryQtr;
@@ -154,15 +158,22 @@
                         font-size: 1em;
                         text-transform: uppercase;
                     }
+                    .social-icon-wrapper{
+                        display: flex;
+                        flex-direction: row;
+                        border: 0px solid cyan;
+                    }
                     .socials {
-                        padding-top: 10px;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 1em 1em 0 0;
                     }
                 }
 
                 /*--= Technology =--*/
                 .tech-kontainer {
                     margin: 0px;
-                    padding: 10% 0 10% 10%;
+                    padding: 10% 5% 10% 10%;
                     text-align: left;
                     letter-spacing: .05em;
                     color: $rlgColorTertiaryQtr;
@@ -181,7 +192,22 @@
         .fab {
             padding-right: .3em;
         }
+        .fa-2x {
+            font-size: 1.3em;
+        }
         }
     }
 
+}
+
+hr {
+    // display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $rlgColorGreyLight;
+    opacity: 0.25;
+    // margin: 1em 0;
+    // padding: 0;
+    // background-color: blue;
+    // color: red; //$rlgColorGreyQtr;
 }

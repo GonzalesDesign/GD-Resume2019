@@ -3,7 +3,7 @@
         "name": "R.Lloyd Gonzales",
         "profession": "UI DESIGNER • ANGULAR DEVELOPER",
         "logo":  "gdLogo.jpg",
-        "profileSummary": "A designer who codes. It doesn't make me a better designer, I do it because I love it. I started having fond of javascript when it was introduced as AS3 in Flash platform. Coded lots of interactive pages with Flash and continued on with HTML5, SCSS, and JS and now with Typescript and Angular+ framework.",
+        "profileSummary": "A designer who codes. It doesn't make me a better designer, I do it because I love it. I started having fond of javascript when it was introduced as AS3 in Flash platform. Coded lots of interactive pages with Flash and continued on with HTML5, SCSS, and JS and now with Typescript and Angular + framework. Self-motivated, independent, detail oriented and responsible team-player.",
         "address":
             {   "street": "226 Chase Drive",
                 "city": "Somerdale,",
@@ -13,12 +13,12 @@
         "email": "rolandolloyd@gmail.com",
         "imagePath": "../../assets/images/",
         "menu": [
-            { "name": "MenuX",           "menuIcon": "menu",    "targetid": "mainContainerId"},
-            { "name": "Profile SummaryX", "menuIcon": "mood",    "targetid": "mainContainerId"},
-            { "name": "Experience",      "menuIcon": "work",    "targetid": "experienceId"},
-            { "name": "Education",       "menuIcon": "school",  "targetid": "educationId"},
-            { "name": "Social Medias",   "menuIcon": "share",   "targetid": "socialMediasId"},
-            { "name": "Technologies",    "menuIcon": "memory",  "targetid": "technologiesId"}
+            { "name": "Menu",            "shortName": "Menu",       "menuIcon": "menu",    "targetid": "#mainContainerId"},
+            { "name": "Profile Summary", "shortName": "Profile",    "menuIcon": "mood",    "targetid": "#profileId"},
+            { "name": "Experience",      "shortName": "Jobs",       "menuIcon": "work",    "targetid": "#experienceId"},
+            { "name": "Education",       "shortName": "School",     "menuIcon": "school",  "targetid": "#educationId"},
+            { "name": "Social Medias",   "shortName": "Social",     "menuIcon": "share",   "targetid": "#socialMediasId"},
+            { "name": "Technologies",    "shortName": "Tech",       "menuIcon": "memory",  "targetid": "#technologiesId"}
         ],
         "education": [
             { "school": "PRATT Institute",          "location": "New York, N.Y."},
@@ -98,7 +98,7 @@
             "role": "UI Designer • Coder • Illustrator • Retoucher • Animator • Video Editor",
             "locale": "NY, NJ, CA, Philippines",
             "description":  [
-                { "paragraph": "As a Freelancer, I worked on various projects for different companies responsible of varied types of projects wearing different hats." },
+                { "paragraph": "As a Freelancer, I worked on various projects for several companies responsible for diverse types of projects wearing different hats." },
                 { "paragraph": "" }
                 ]
         },
@@ -123,7 +123,7 @@
             "locale": "New York, NY",
             "description":  [
                 { "paragraph": "Gannett is a leading media and marketing company with unparalleled local-to-national reach, successfully connecting consumers, communities and businesses." },
-                { "paragraph": "Worked as a Graphics Designer and Illustrator for the papers. Helped bridge the usage of DTP from New York to Washington offices." }
+                { "paragraph": "Worked as a Graphics Designer and Illustrator for USAToday and USAWeekend. Trained other designer migrate to the digital realm using the Mac, Quark, Photoshop, Illustrator & Freehand software. Improved bridge the usage of DTP from New York to Washington offices."}
                 ]
         }
     ]

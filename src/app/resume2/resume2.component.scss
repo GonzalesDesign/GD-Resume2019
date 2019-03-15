@@ -32,6 +32,8 @@
         display: flex;
         // justify-content: center;
         position: fixed;
+        // transition: top 0.4s;
+        transition: all .5s ease-in-out;
         // left: 0;
         top: -20px;
         padding-top: 20px;
@@ -95,7 +97,7 @@
     }
     .profile-quick-pop-kontainer {
         padding-bottom: 6em;
-        background-image: url('./../../assets/images/gdLogo.jpg');
+        background-image: url('./../../assets/images/gdLogo-right.jpg');
         background-repeat: no-repeat;
         background-size: contain;
         background-position: bottom;
@@ -241,12 +243,12 @@
         width: 100%;
         // height: 100vh;
         border: 0px solid red;
-        margin-top: 2em;
+        // margin-top: 2em;
         // width: 90%;
         background-image: url('./../../assets/images/resume-background.jpg');
         background-repeat: no-repeat;
         // background-size: cover;
-        background-size: 100% 9.5em;
+        background-size: 100% 11.5em;
         border: 0px solid blue;
     }
 
@@ -265,6 +267,7 @@
         Left bar area: Logo
     |======================================================*/
     .left-bar-kontainer {
+        margin-top: 2em;
         width: 20%;
         border: 0px solid red;
     }
@@ -287,7 +290,7 @@
     }
 
     .right-bar-kontainer {
-        margin-top: 2em;
+        margin-top: 4em;
         width: 80%;
         border: 0px solid grey;
         margin-right: 2em;
@@ -327,12 +330,13 @@
         border: 0px solid lime;
     }
     .contact-name {
-        @include fontFamilyWeightSize($rlg-header-font, 600, 2.2em);
-        color: $rlgColorTertiary;
-        letter-spacing: 0.05em;
-        line-height: 1em;
-        opacity: 0.75;
         border: 0px solid lime;
+        .contact-link{@include fontFamilyWeightSize($rlg-header-font, 600, 2.2em);
+            color: $rlgColorTertiary;
+            text-decoration-line: none;
+            letter-spacing: 0.05em;
+            line-height: 1em;
+        }
     }
     .contact-profession {
         @include fontFamilyWeightSize($rlg-primary-font, 600, 0.8em);
@@ -362,7 +366,7 @@
     /*=======================================
         Main Article: Holds experience data
     =========================================*/
-    .experience-kontainer {
+    .experience2-kontainer {
         position: absolute;
         @include fontFamilyWeightSize($rlg-primary-font, 300, 0.8em);
         padding-top: 0em;
@@ -454,11 +458,11 @@
         // justify-content: center;
         // align-content: center;
         display: flex;
-        border-radius: 14em;
-        /* padding-right: 10em; */
-        border: 2px solid #d9ebf2;
-        width: 1.5em;
-        height: 1.5em;
+        // border-radius: 14em;
+        // /* padding-right: 10em; */
+        // border: 2px solid #d9ebf2;
+        // width: 1.5em;
+        // height: 1.5em;
     }
     .social-icon-title {
         @include fontFamilyWeightSize($rlg-primary-font, 400, .5em);
@@ -468,6 +472,9 @@
     }
     .mobile-social {
         border: 0px solid orange;
+    }
+    .mobile-tech {
+        // display: flex;
     }
 
     /*--= assigned from ts =--*/
@@ -524,6 +531,13 @@
     //   height: 20px;
     //   text-align: center;
     //   line-height: 0.8;
+    // }
+
+    .mobile-edu-kontainer {
+        transition: top 0.8s;
+    }
+    // #educationId {
+    //     transition: top 0.8s;
     // }
 
     /*--= quick top nav info =--*/

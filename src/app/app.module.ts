@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 /*---= Routing Module =---*/
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+// import { AnchorComponent } from './resume3/anchor/anchor.component';
+// import { Resume3Component } from './resume3/resume3.component';
 // import { RouterModule, Routes } from '@angular/router';
 
 

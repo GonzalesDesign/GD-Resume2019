@@ -1,0 +1,28 @@
+/*|=============================================|
+    GENERAL STYLING
+|===============================================|*/
+@import './../../../styles.scss';
+
+
+.content {
+    top: 4em;
+    margin: 4em 2em 4em 2em;
+    // width: calc(100vw - 20em);
+    background: bisque;
+}
+
+#profileId {
+    padding-top: 0em;
+}
+
+h2 {
+    @include fontFamilyWeightSize($rlg-primary-font, 600, 1.2em);
+    text-transform: uppercase;
+    color: $rlgColorPrimary;
+    margin-top: 70px;
+}
+p {
+    @include fontFamilyWeightSize($rlg-primary-font, 400, 0.9em);
+    // text-transform: uppercase;
+    color: $rlgColorGreyDark;
+}

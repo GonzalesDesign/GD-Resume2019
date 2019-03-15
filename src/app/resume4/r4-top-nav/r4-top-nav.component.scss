@@ -1,0 +1,66 @@
+/*|=============================================|
+    GENERAL STYLING
+|===============================================|*/
+@import './../../../styles.scss';
+
+.r4-top-nav-kontainer {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    transition: all .5s ease-in-out;
+    // width: auto;
+    width: $calcScreenWidth;
+    background: $rlgColorPrimary;
+    border: 0px solid greenyellow;
+}
+
+.logo {
+    // height: 3em;
+    width: 10%;
+    background-image: url('./../../../assets/images/GD-Logo.png');
+    // background-image: url('./src/app/assets/images/gdLogo-right.jpg');
+    // background-image: url('./../../../assets/images/gdLogo-right.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border: 0px solid cyan;
+}
+.r4-btn-kontainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    // cursor: pointer;
+    // width: 10em; //auto;
+    min-width: 500px;
+    width: $calcScreenWidth;
+    // width: calc(100vw - 20em);
+    border: 0px solid rgb(214, 9, 255);
+
+    .r4-btns {
+        display: flex;
+        align-items: center;
+        border: 0px solid rgb(9, 189, 255);
+        width: 100%;
+        cursor: pointer;
+        overflow: hidden;
+        margin: 1em 0 1em 1em;
+
+        .full-width-screen {
+            display: flex;
+            align-items: center;
+        }
+
+        .r4-btn-icons {
+            // margin: 0.5em;
+            background-color: grey;
+        }
+        .r4-btn-names {
+            @include fontFamilyWeightSize($rlg-primary-font, 600, 0.7em);
+            text-transform: uppercase;
+            color: $rlgColorPrimaryQtr;
+            margin: .5em;
+            border: 0px solid;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+
+/*|=============================================|
+    GENERAL STYLING
+|===============================================|*/
+@import './../../../styles.scss';
+
+    .content-kontainer {
+        margin: 2em;
+        width: calc(100vw - 100px); // 100%; // 1000px;
+        border: 1px solid #000;
+    }
+
+    .content {
+        margin-top: 5em;
+        margin-bottom: 5em;
+    }

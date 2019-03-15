@@ -11,13 +11,7 @@
         ViewEncapsulation: use to edit mat encapsulation
 ***********************************************************/
 
-import {
-    Component,
-    OnInit,
-    OnDestroy,
-    HostListener,
-    ViewEncapsulation
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ViewEncapsulation } from '@angular/core';
 import { ExperienceService } from './../../services/experience.service';
 import { Subscription } from 'rxjs';
 import { FunkzionsService } from './../../services/funkzions.service';
@@ -35,6 +29,7 @@ export class Resume2Component implements OnInit, OnDestroy {
     public menuItem = '.menu-item';
     public verticalToolbar = '.hamburger-menu';
     public topBarNav = '.top-bar-nav';
+    public topNavBarKontainerId = ('topNavBarKontainerId');
 
     public displayHamburger: boolean;
 
@@ -43,7 +38,6 @@ export class Resume2Component implements OnInit, OnDestroy {
     public showMobile: boolean;
 
     public screenWidth: number;
-
 
     /*--===| data arrays |===--*/
     public aAllMenu = [];
@@ -58,23 +52,6 @@ export class Resume2Component implements OnInit, OnDestroy {
     /*--===| menu content |===--*/
     public aMenuIcons = [];
     public aMenuNames = [];
-    // public menuIcon0: string; // = 'menu';
-    // public menuName0: string; //  = 'MENU';
-
-    // public menuIcon1: string; // = 'mood';
-    // public menuName1: string; // = 'PROFILE SUMMARY';
-
-    // public menuIcon2: string; // = 'work';
-    // public menuName2: string; // = 'EXPERIENCE';
-
-    // public menuIcon3: string; // = 'school';
-    // public menuName3: string; // = 'EDUCATION';
-
-    // public menuIcon4: string; // = 'share';
-    // public menuName4: string; // = 'SOCIAL MEDIAS';
-
-    // public menuIcon5: string; // = 'memory';
-    // public menuName5: string; // = 'TECHNOLOGIES';
 
     /*--===|•-----•«÷»•-----•|===--*/
 
@@ -85,13 +62,13 @@ export class Resume2Component implements OnInit, OnDestroy {
 	=-----=|••• DI: Services •••|=-----=
 	====================================-*/
     constructor(private _experienceService: ExperienceService,
-                private _funkzion: FunkzionsService ) {}
+                private _funkzions: FunkzionsService ) {}
 
     ngOnInit() {
         this.fResizeMe();
         /*-=================================
-						=-----=|••• OBSERVABLE •••|=-----=
-				====================================-*/
+                =-----=|••• OBSERVABLE •••|=-----=
+        ====================================-*/
         this.subsExperience = this._experienceService
             .experienceData()
             .subscribe(data => {
@@ -105,7 +82,6 @@ export class Resume2Component implements OnInit, OnDestroy {
 
                 /**********************************************************************
                     Menu Nav: Collect data and populate array
-
                 **********************************************************************/
                 /*--= first element for hamburger menu =--*/
                 // this.menuIcon0 = contactInfoElement.menu[0].menuIcon;
@@ -126,11 +102,11 @@ export class Resume2Component implements OnInit, OnDestroy {
                     this.aAllMenu[this.aAllMenu.length] = contactInfoElement.menu[m];
                     this.aMenuIcons[this.aMenuIcons.length] = contactInfoElement.menu[m].menuIcon;
                     this.aMenuNames[this.aMenuNames.length] = contactInfoElement.menu[m].name;
-                    console.log('this.aMenuNames: ', this.aMenuNames);
+                    // console.log('this.aMenuNames: ', this.aMenuNames);
                 }
                 /*--= remove the first element from array =--*/
                 this.aAllMenu.shift();
-                console.log('this.aAllMenu: ', this.aAllMenu);
+                // console.log('this.aAllMenu: ', this.aAllMenu);
 
 
                 /**********************************************************************
@@ -167,11 +143,9 @@ export class Resume2Component implements OnInit, OnDestroy {
                 }
             });
 
-        //   this.fCreateSpan('classy');
-        // this.fCreateTag( 'span', 'className', 'title', 1, '#techIdTest' );
-        // this.fCreateLi();
-
-
+        /*--===| fShowHideTopNav |===--*/
+        // this.fShowHideTopNav('topNavBarKontainerId', '-20', '-100');
+        this._funkzions.fShowHideTopNav(this.topNavBarKontainerId, '-20', '-100');
     }
 
     /*-==================================
@@ -215,6 +189,35 @@ export class Resume2Component implements OnInit, OnDestroy {
         s.visibility = vis;
     }
 
+
+    /***********************************************
+        onScrollTo2: for animated anchor linking
+    ************************************************/
+    public onScrollTo2(elemId) {
+        this._funkzions.fScrollTo2(1, elemId, 0);
+        // this._funkzions.fAnimXPos(this.anchorKontainer, 2, '200px');
+        // console.log('this.r3TopKontainer');
+    }
+
+    /*-==============================================
+    fShowHideTopNav: Hide top nav bar when scroll up
+                   Show top nav bar on scroll down
+                   id, showPos, hidePos
+	=================================================-*/
+    // public fShowHideTopNav(id, showPos, hidePos) {
+    //     let prevScrollpos = window.pageYOffset;
+    //     window.onscroll = function() {
+    //     const currentScrollPos = window.pageYOffset;
+    //         if (prevScrollpos > currentScrollPos) {
+    //         // document.getElementById('r3NavBarKontainer').style.top = '0';
+    //         document.getElementById(id).style.top = showPos + 'px'; // '0';
+    //         } else {
+    //         // document.getElementById('r3NavBarKontainer').style.top = '-50px';
+    //         document.getElementById(id).style.top = hidePos + 'px'; // '-50px';
+    //         }
+    //         prevScrollpos = currentScrollPos;
+    //     };
+    // }
 
 
 

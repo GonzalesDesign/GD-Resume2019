@@ -1,0 +1,28 @@
+<div class="r3-top-kontainer" id="r3TopKontainer">
+    <!--==============================================|
+        Material Toolbar: Top Navigation Bar
+        This is set to fixed position
+        Top bar shows a horizontal menu for large
+        screens and a hamburger menu for smaller
+    |=================================================-->
+    <mat-toolbar class="top-nav-bar-kontainer" id="r3NavBarKontainer">
+        <div class="gsapBtn">
+            <a class="title-linkX"
+                [style.marginRight.em]="'2'"
+                (click)="onSlideUp()">
+                <mat-icon class="top-bar-icon"
+                    [style.backgroundColor]="'black'">
+                    {{ aMenuIcons[4] }}</mat-icon>
+            </a>
+            <a class="title-linkX"
+                [style.marginRight.em]="'2'"
+                (click)="onSlideDown()">
+                <mat-icon class="top-bar-icon"
+                    [style.backgroundColor]="'grey'">
+                    {{ aMenuIcons[4] }}</mat-icon>
+            </a>
+        </div>
+    </mat-toolbar>
+
+
+</div>
