@@ -69,9 +69,7 @@ export class Resume2Component implements OnInit, OnDestroy {
         /*-=================================
                 =-----=|••• OBSERVABLE •••|=-----=
         ====================================-*/
-        this.subsExperience = this._experienceService
-            .experienceData()
-            .subscribe(data => {
+        this.subsExperience = this._experienceService.experienceData().subscribe(data => {
                 // this.allData = data;
                 const contactInfoElement: any = data[0];
                 const experienceElement: any = data[1];
@@ -106,7 +104,7 @@ export class Resume2Component implements OnInit, OnDestroy {
                 }
                 /*--= remove the first element from array =--*/
                 this.aAllMenu.shift();
-                // console.log('this.aAllMenu: ', this.aAllMenu);
+                // console.log('this.aAllMenu: ', this.aAllMenu); // shift() "Menu"
 
 
                 /**********************************************************************
@@ -146,6 +144,7 @@ export class Resume2Component implements OnInit, OnDestroy {
         /*--===| fShowHideTopNav |===--*/
         // this.fShowHideTopNav('topNavBarKontainerId', '-20', '-100');
         this._funkzions.fShowHideTopNav(this.topNavBarKontainerId, '-20', '-100');
+
     }
 
     /*-==================================
@@ -155,10 +154,10 @@ export class Resume2Component implements OnInit, OnDestroy {
         this.subsExperience.unsubscribe();
     }
 
-    public fToggle() {
-        this.showMenu = !this.showMenu;
-        console.log('this.showMenu: ', this.showMenu);
-    }
+    // public fToggle() {
+    //     this.showMenu = !this.showMenu;
+    //     console.log('this.showMenu: ', this.showMenu);
+    // }
 
     // /*---| Button to open external links |---*/
     public fOpenXLinks(link) {
@@ -181,18 +180,20 @@ export class Resume2Component implements OnInit, OnDestroy {
 
     public fOpenMenu() {
         this.fElementVisibility(this.menuItem, 'visible');
+        console.log('this.menuItem: ', this.menuItem);
     }
 
     public fElementVisibility(e, vis) {
         const x = document.querySelector(e),
             s = x.style;
-        s.visibility = vis;
+        // s.visibility = vis;
+        // console.log('e: ', e);
     }
 
 
-    /***********************************************
-        onScrollTo2: for animated anchor linking
-    ************************************************/
+    /********************************************************
+        onScrollTo2: for animated anchor linking on clicked
+    *********************************************************/
     public onScrollTo2(elemId) {
         this._funkzions.fScrollTo2(1, elemId, 0);
         // this._funkzions.fAnimXPos(this.anchorKontainer, 2, '200px');
@@ -222,52 +223,52 @@ export class Resume2Component implements OnInit, OnDestroy {
 
 
 
-    public fRouterTest() {
-        console.log('event.target.nodeName: '); // , event.target.nodeName);
-    }
+    // public fRouterTest() {
+    //     console.log('event.target.nodeName: '); // , event.target.nodeName);
+    // }
 
-    public fCreateSpan(classname, parentId, span2class, htmlText) {
-        const span1 = document.createElement('span');
-        span1.className = classname;
-        span1.id = 'span-id1';
-        // ul.appendChild(span1);
-        document.getElementById(parentId).appendChild(span1);
-        // span1.innerHTML = htmlText;
-        const span2 = document.createElement('span');
-        span2.className = span2class;
-        document.getElementById(parentId).appendChild(span2);
-        span2.innerHTML = htmlText;
-    }
+    // public fCreateSpan(classname, parentId, span2class, htmlText) {
+    //     const span1 = document.createElement('span');
+    //     span1.className = classname;
+    //     span1.id = 'span-id1';
+    //     // ul.appendChild(span1);
+    //     document.getElementById(parentId).appendChild(span1);
+    //     // span1.innerHTML = htmlText;
+    //     const span2 = document.createElement('span');
+    //     span2.className = span2class;
+    //     document.getElementById(parentId).appendChild(span2);
+    //     span2.innerHTML = htmlText;
+    // }
 
-    public fCreateSpan1(classname) {
-        const newNode = document.createElement('div');
-        newNode.className = classname;
-        newNode.innerHTML = 'this created div contains class while created!!!';
-        const parentNode = document.getElementById('techIdTestX');
-        parentNode.appendChild(newNode);
-        // newNode.appendTo(parentNode);
-        // const span = document.createElement('span');
-        // span.className = classname; // 'mdc-image-list__item imageLi';
-        // span.id = idname; // 'liId'; // +[i];
-        // // const spanParent = document.querySelector('#techIdTest');
-        // const spanParent = document.getElementById(this.techId);
-        // // spanParent.appendChild(span);
-        // span.innerHTML = 'images[i].title';
+    // public fCreateSpan1(classname) {
+    //     const newNode = document.createElement('div');
+    //     newNode.className = classname;
+    //     newNode.innerHTML = 'this created div contains class while created!!!';
+    //     const parentNode = document.getElementById('techIdTestX');
+    //     parentNode.appendChild(newNode);
+    //     // newNode.appendTo(parentNode);
+    //     // const span = document.createElement('span');
+    //     // span.className = classname; // 'mdc-image-list__item imageLi';
+    //     // span.id = idname; // 'liId'; // +[i];
+    //     // // const spanParent = document.querySelector('#techIdTest');
+    //     // const spanParent = document.getElementById(this.techId);
+    //     // // spanParent.appendChild(span);
+    //     // span.innerHTML = 'images[i].title';
 
-        // console.log('classname: ', classname);
-        // console.log('idname: ', idname);
-        // console.log('spanParent: ', spanParent);
-        // for(let i=0; i < images.length; i++){
-        //     /*--= create span inside div =--*/
-        //     let span = document.createElement("span");
-        //     span.className = "mdc-image-list__label";
-        //     span.id = "divId"+[i];
-        //     let spanParent = document.getElementById(div.id);
-        //     spanParent.appendChild(span);
-        //     // document.querySelector("mdc-image-list__label").innerHTML = images[1].image
-        //     span.innerHTML = images[i].title;
-        // }
-    }
+    //     // console.log('classname: ', classname);
+    //     // console.log('idname: ', idname);
+    //     // console.log('spanParent: ', spanParent);
+    //     // for(let i=0; i < images.length; i++){
+    //     //     /*--= create span inside div =--*/
+    //     //     let span = document.createElement("span");
+    //     //     span.className = "mdc-image-list__label";
+    //     //     span.id = "divId"+[i];
+    //     //     let spanParent = document.getElementById(div.id);
+    //     //     spanParent.appendChild(span);
+    //     //     // document.querySelector("mdc-image-list__label").innerHTML = images[1].image
+    //     //     span.innerHTML = images[i].title;
+    //     // }
+    // }
 
     // fCreateTag( tagType, className, title, counter, appendedTo ) {
     //     const divName = document.createElement( tagType );

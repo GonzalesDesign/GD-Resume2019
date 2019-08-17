@@ -62,7 +62,7 @@ export class FunkzionsService {
         fScrollTo2: for animated anchor linking
     ************************************************/
     public fScrollTo2(tym, elemId, yOffset) {
-        TweenMax.to( window, tym, { scrollTo: { y: elemId, offsetY: yOffset, autoKill: false }});
+        TweenMax.to( window, tym, { scrollTo: { y: '#' + elemId, offsetY: yOffset, autoKill: false }});
     }
 
     /*-==============================================
@@ -71,6 +71,7 @@ export class FunkzionsService {
 	=================================================-*/
     public fShowHideTopNav(id, showPos, hidePos) {
         let prevScrollpos = window.pageYOffset;
+        console.log('id: ', id);
         window.onscroll = function() {
         const currentScrollPos = window.pageYOffset;
             if (prevScrollpos > currentScrollPos) {
@@ -81,6 +82,7 @@ export class FunkzionsService {
             document.getElementById(id).style.top = hidePos + 'px'; // '-50px';
             }
             prevScrollpos = currentScrollPos;
+            // console.log('prevScrollpos: ', prevScrollpos);
         };
     }
 

@@ -13,6 +13,7 @@
         This is set to fixed position
         Top bar shows a horizontal menu for large
         screens and a hamburger menu for smaller
+        [matMenuTriggerFor] = Material Directive
     |================================================-->
     <mat-toolbar class="top-nav-bar-kontainer" id="topNavBarKontainerId">
         <!--============================================|
@@ -31,9 +32,11 @@
                     {{ aMenuNames[0] }}
                 </span>
             </div>
-            <!--====================================|
+            <!--=========================================|
                 Hamburger pop-up menu content
-            |=======================================-->
+                [overlapTrigger] = Material Directive
+                mat-menu-item =
+            |==========================================-->
             <mat-menu class="mat-menu-kontainer quick-pop-up-hamburger"
                 #varMenu="matMenu"
                 [overlapTrigger]="false">
@@ -53,7 +56,7 @@
                         Anchor scrolling: using routerlink
                     |=================================================-->
                     <!-- <a [routerLink]="resume" fragment="{{ menu.targetid }}" class="hamburger-menu-name">
-                        B: {{ menu.name }}
+                        {{ menu.name }}
                     </a> -->
                     <!--==============================================|
                         Anchor scrolling: using href
@@ -84,8 +87,7 @@
                     Profile Summary: Top bar menu
                 |==========================================================-->
                 <div class="top-bar-menu" [matMenuTriggerFor]="popProfileSummary">
-                    <mat-icon class="top-bar-icon">
-                        {{ aMenuIcons[1] }} </mat-icon>
+                    <mat-icon class="top-bar-icon">{{ aMenuIcons[1] }}</mat-icon>
                     <span class="menu">
                         {{ aMenuNames[1] }}
                     </span>
@@ -226,7 +228,7 @@
             Profile Summary: Show these on small screen. Hide on large screen
         |====================================================================-->
         <div *ngIf="showMobile" class="mobile">
-            <div class="profileSummary article-header" >Profile Summary</div>
+            <div class="profileSummary article-header white-text-shadow" >Profile Summary</div>
             <!-- <hr class="hr1"> -->
             <!-- <span class="experience-target" id="experienceId"></span> -->
             <div class="mobile-profile-summary-kontainer">
@@ -239,7 +241,7 @@
             Experience: List of experience
         |====================================================================-->
         <span class="experience2-kontainer" id="experienceId"></span>
-        <div class="experience-header article-header">Experience</div>
+        <div class="experience-header article-header white-text-shadow">Experience</div>
         <!-- <hr class="hr1"> -->
         <div class="experience-list"
             *ngFor="let experience of aAllExperienceData; let i = index">
@@ -263,7 +265,7 @@
             Education Container
         |=======================================================-->
         <div class="mobile-edu-kontainer" id="educationId">
-            <div class="education-header article-header">Education</div>
+            <div class="education-header article-header white-text-shadow">Education</div>
             <div *ngFor="let education of aEducationData; let i = index"
                 class="mobile-education">
                 <hr />
@@ -276,7 +278,7 @@
             Social Medias Container
         |=======================================================-->
         <div class="mobile-social-kontainer" id="socialMediasId">
-          <div class="social-header article-header">Social Medias</div>
+          <div class="social-header article-header white-text-shadow">Social Medias</div>
           <div *ngFor="let social of aSocialMediaData; let i = index"
                 class="mobile-social">
             <hr />
@@ -293,7 +295,7 @@
             Technologies Container
         |=======================================================-->
         <div class="mobile-tech-kontainer" id="technologiesId">
-          <div class="tech-header article-header">Technologies</div>
+          <div class="tech-header article-header white-text-shadow">Technologies</div>
           <div *ngFor="let technology of aTechnologiesData; let i = index"
             class="mobile-tech">
             <hr />

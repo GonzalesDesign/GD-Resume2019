@@ -99,8 +99,10 @@
         padding-bottom: 6em;
         background-image: url('./../../assets/images/gdLogo-right.jpg');
         background-repeat: no-repeat;
-        background-size: contain;
-        background-position: bottom;
+        background-size: 70%; //contain;
+        // background-position: bottom;
+        background-position-x: right;
+        background-position-y: 240px;
         // opacity: 0.5;
         // background-size: 100% 9.5em;
     }

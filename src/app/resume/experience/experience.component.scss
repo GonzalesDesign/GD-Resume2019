@@ -33,7 +33,7 @@
     padding-right: 30px;
 
     .experience-header {
-
+        border: 0px solid red;
     }
 
     .title {
@@ -48,6 +48,11 @@
     }
 
     .role {
+        font-size: .7em;
+        // margin-bottom: 1em;
+    }
+
+    .date {
         font-size: .7em;
         margin-bottom: 1em;
     }
@@ -68,6 +73,11 @@
     // font-weight: 600;
     padding-top: 30px;
     color: $rlgColorPrimaryAlternativeMid; //$rlgColorPrimaryQtr;
+    border: 0px solid red;
+}
+.material-icons {
+    border: 0px solid red;
+    background-color: rgba(red, 0);
 }
 
 .parag-descript {

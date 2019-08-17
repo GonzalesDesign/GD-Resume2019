@@ -1,6 +1,5 @@
-
 /*=---=|• GENERAL STYLING •|=---=*/
-@import './../../styles.scss';
+@import "./../../styles.scss";
 
 .main-kontainer {
     display: flex;
@@ -12,7 +11,7 @@
     min-width: 681px;
     background-color: $rlgColorTertiaryQtr; //#f7fcef;
     // border: 0px solid rgba(200, 100, 100, .5);
-    box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, .25);
+    box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.25);
 
     .top-kontainer {
         display: flex;
@@ -25,6 +24,7 @@
         background-position-y: -4px;
         background-size: 120%;
         box-shadow: $box-shadow2;
+        // opacity: .01;
 
         .top-left-kontainer {
             display: block;
@@ -44,21 +44,20 @@
             border: 0px solid purple;
             border-bottom: 10px solid $rlgColorSecondary;
 
-
             .title {
                 margin-top: 40px;
                 padding-left: 20px;
                 line-height: 1.1em;
                 text-shadow: $text-shadow;
                 .title-link {
-                    @include fontFamilyWeightSize ($rlg-header-font, 300, 2em);
+                    @include fontFamilyWeightSize($rlg-header-font, 300, 2em);
                     color: $rlgColorTertiary;
                     text-decoration-line: none;
                 }
             }
 
             .sub-title {
-                @include fontFamilyWeightSize ($rlg-primary-font, 400, .9em);
+                @include fontFamilyWeightSize($rlg-primary-font, 400, 0.9em);
                 color: $rlgColorTertiaryQtr;
                 line-height: 1.4em;
                 padding-left: 20px;
@@ -73,7 +72,7 @@
 
         .header {
             // @include fontFamilyWeightSize ($rlg-header-font, 300, 1em);
-            letter-spacing: .05em;
+            letter-spacing: 0.05em;
             // font-size: 1em;
             // font-weight: 600;
             // padding-top: 30px;
@@ -93,7 +92,7 @@
             .contact-kontainer {
                 text-transform: uppercase;
                 text-align: left;
-                letter-spacing: .05em;
+                letter-spacing: 0.05em;
 
                 /*--= Contact Info =--*/
                 .info-kontainer {
@@ -112,7 +111,7 @@
                         // padding-top: 30px;
                     }
                     .contact {
-                        font-size: .65em;
+                        font-size: 0.65em;
                         padding-top: 10px;
                         // padding-bottom: 10px;
                     }
@@ -138,7 +137,7 @@
                         // padding-top: 30px;
                     }
                     .school {
-                        font-size: .65em;
+                        font-size: 0.65em;
                         padding-top: 10px;
                         // padding-bottom: 20px;
                     }
@@ -149,7 +148,7 @@
                     margin: 0px;
                     padding: 10% 0 10% 10%;
                     text-align: left;
-                    letter-spacing: .05em;
+                    letter-spacing: 0.05em;
                     color: $rlgColorTertiaryQtr;
                     background-color: $rlgColorDark; //$rlgColorSecondaryMid; //$rlgColorPrimaryMid;
                     border: 0px solid cyan;
@@ -158,7 +157,7 @@
                         font-size: 1em;
                         text-transform: uppercase;
                     }
-                    .social-icon-wrapper{
+                    .social-icon-wrapper {
                         display: flex;
                         flex-direction: row;
                         border: 0px solid cyan;
@@ -175,7 +174,7 @@
                     margin: 0px;
                     padding: 10% 5% 10% 10%;
                     text-align: left;
-                    letter-spacing: .05em;
+                    letter-spacing: 0.05em;
                     color: $rlgColorTertiaryQtr;
                     // background-color: $rlgColorPrimaryMid;
                     border: 0px solid cyan;
@@ -189,15 +188,14 @@
                     }
                 }
             }
-        .fab {
-            padding-right: .3em;
-        }
-        .fa-2x {
-            font-size: 1.3em;
-        }
+            .fab {
+                padding-right: 0.3em;
+            }
+            .fa-2x {
+                font-size: 1.3em;
+            }
         }
     }
-
 }
 
 hr {
@@ -210,4 +208,31 @@ hr {
     // padding: 0;
     // background-color: blue;
     // color: red; //$rlgColorGreyQtr;
+}
+
+.gd-logo-container {
+    display: flex;
+    justify-content: center;
+    border: 0px solid rgb(155, 255, 40);
+
+    .gd-logo {
+        margin-top: 200px;
+        width: 50%;
+        // width: 10em;
+        height: 9em;
+        background-image: url("./../../assets/images/GD-Logo.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 50% 95%;
+        opacity: .75;
+        border: 0px solid rgb(155, 255, 40);
+    }
+
+
+}
+.gd-logo-title {
+    @include fontFamilyWeightSize($rlg-primary-font, 300, .8em);
+    color: rgba(white, .5);
+    text-align: center;
+    border: 0px solid rgb(155, 255, 40);
 }

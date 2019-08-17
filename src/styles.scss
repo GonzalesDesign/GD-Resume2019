@@ -7,10 +7,10 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i");
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption');
 @import url('https://fonts.googleapis.com/css?family=Ovo');
-@import url("https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
 
 /*---=| Font families |=---*/
@@ -41,7 +41,7 @@ $rlgColorPrimaryQtr: lighten($rlgColorPrimary, 20%); // rgb(121, 206, 240);
 $rlgColorPrimaryLite: lighten($rlgColorPrimary, 50%); // rgb(121, 206, 240);
 
 /*--= SECONDARY =--*/
-$rlgColorSecondary: rgb(254, 68, 0); //#fe5900
+$rlgColorSecondary: #fe4400; //#fe5900
 $rlgColorSecondaryMid: lighten($rlgColorSecondary, 15%);
 $rlgColorSecondaryDrk: darken($rlgColorSecondary, 5%);
 
@@ -74,6 +74,10 @@ $text-shadow: 1px 1px 2px rgba($rlgColorDark,.25);
 $box-shadow: 3px 1px 6px rgba($rlgColorDark,.25);
 $box-shadow2: 1px 3px 6px rgba($rlgColorDark,.25);
 
+.white-text-shadow {
+    text-shadow: 0 0 #ffffff, 1px 1px #ffffff, 2px 2px #ffffff, 3px 3px rgb(249, 213, 174);
+}
+
 /*---=| Borders for testing variables |=---*/
 $borderForTesting: 0px solid rgb(6, 161, 245);
 $redBorderForTesting: 0px solid rgb(245, 1, 1);
@@ -90,7 +94,13 @@ html, body {
   margin: 0;
   padding-top: 0.1px; // Prevent header h1 margin from pushing body down
 }
-
+/*=====================================================|
+    Hiding the scrollbar
+|======================================================*/
+::-webkit-scrollbar {
+    /* This is the magic bit for WebKit */
+    display: none;
+  }
 
 //body { margin: 0; font-family: 'Roboto', sans-serif; }
 
@@ -158,13 +168,7 @@ html, body {
   font-feature-settings: 'liga';
 }
 
-/*=====================================================|
-    Hiding the scrollbar
-|======================================================*/
-::-webkit-scrollbar {
-  /* This is the magic bit for WebKit */
-  display: none;
-}
+
 
 
 /*=====================================================|

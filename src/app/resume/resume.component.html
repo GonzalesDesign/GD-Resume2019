@@ -1,144 +1,136 @@
-
 <div class="main-kontainer">
 
-  <div class="top-kontainer">
+    <div class="top-kontainer">
 
-      <div class="top-left-kontainer">
-        <!-- space for logo -->
-      </div>
-
-      <!-- TOP MAIN CONTAINER -->
-      <div class="top-main-kontainer">
-          <div class="title">
-            <a [routerLink]="['/resume2']" class="title-link">
-                R.LLOYD GONZALES
-            </a>
-          </div>
-
-          <div class="sub-title">
-              UI DESIGNER • ANGULAR DEVELOPER
-          </div>
-
-      </div>
-
-  </div>
-
-  <div class="kontent-kontainer">
-
-    <div class="left-kontainer">
-      <!-- [style.height.vh]="'100'" -->
-      <div class="contact-kontainer">
-
-        <!-- CONTACT INFO -->
-        <div class="info-kontainer">
-          <!-- [style.backgroundColor]="'rgba(#347B98, .25)'" -->
-
-
-          <div class="header contact-header">
-              <i class="material-icons resume-icons">home</i>
-              Contact Info:
-          </div>
-
-          <div class="address contact">
-            226 Chase Drive <br>
-            Somerdale, NJ 08083
-          </div>
-
-          <div class="phoneNumber contact">
-            (856)383-7203
-          </div>
-
-          <div class="emailAddress contact">
-              <!-- [style.textTransform]="'lowercase'" -->
-            rolandolloyd@gmail.com
-          </div>
-
-          <div class="website contact">
-            RLloydGonzales.com
-          </div>
-
+        <div class="top-left-kontainer">
+            <!-- space for logo -->
         </div>
 
-        <!-- EDUCATION -->
-        <div class="edu-kontainer">
+        <!-- TOP MAIN CONTAINER -->
+        <div class="top-main-kontainer">
+            <div class="title">
+                <a [routerLink]="['/resume2']" class="title-link">
+                    R.LLOYD GONZALES
+                </a>
+            </div>
 
-          <div class="header education-header">
-              <i class="material-icons resume-icons">school</i>
-              Education:
-          </div>
-
-          <div class="pratt school">
-            PRATT Institute <br>
-            New York, N.Y.
-          </div>
-
-          <div class="feu school">
-            Far Eastern University <br>
-            Manila, Philippines
-          </div>
+            <div class="sub-title">
+                UI DESIGNER • ANGULAR DEVELOPER
+            </div>
 
         </div>
-
-        <!-- SOCIAL -->
-        <div class="social-kontainer">
-            <div class="header social-header">
-                <i class="material-icons resume-icons">group</i>
-                Social Medias:
-            </div>
-            <div class="social-icon-wrapper">
-                <div *ngFor="let social of aSocialMediaData; let i = index"
-                    class="socials">
-                    <div class="{{ social.icon }}">
-                        <span class="social-icon-title"
-                            [ngStyle]="fNgStyleTech()"> {{ social.tech }} </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- TECHNOLOGY -->
-        <div class="tech-kontainer">
-            <div class="header tech-header">
-                <i class="material-icons resume-icons">computer</i>
-                Technology:
-            </div>
-            <div *ngFor="let technology of aTechnologiesData; let i = index"
-                class="tech">
-                <hr />
-                <div class="{{ technology.icon }}">
-                    <span class="tech-icon-title"
-                        [ngStyle]="fNgStyleTech()"> {{ technology.tech }} </span>
-                </div>
-            </div>
-              <!-- <div class="tech">
-                  <i class="fab tech-fab fa-1x fa-html5" title="HTML5"></i>
-                  <i class="fab tech-fab fa-1x fa-css3" title="CSS3"></i>
-                  <i class="fab tech-fab fa-1x fa-js-square" title="ES2015"></i>
-                  <i class="fab tech-fab fa-1x fa-angular" title="ANGULAR"></i> <br>
-                  <i class="fab tech-fab fa-1x fa-adobe" title="PHOTOSHOP & ILLUSTRATOR"></i>
-                  <i class="fab tech-fab fa-1x fa-github-square" title="GITHUB"></i>
-                  <i class="fab tech-fab fa-1x fa-node-js" title="NODE-JS"></i>
-              </div> -->
-          </div>
-
-
-      </div>
 
     </div>
 
-    <div class="right-kontainer"
-      [style.width.%]="'70'"
-      [style.paddingLeft.px]="'0'"
-      [style.border]="'0px solid purple'"
-      >
+    <div class="kontent-kontainer">
 
-      <app-experience></app-experience>
+        <div class="left-kontainer">
+            <!-- [style.height.vh]="'100'" -->
+            <div class="contact-kontainer">
 
-
-
-      </div>
+                <!-- CONTACT INFO -->
+                <div class="info-kontainer">
+                    <!-- [style.backgroundColor]="'rgba(#347B98, .25)'" -->
 
 
-  </div>
+                    <div class="header contact-header">
+                        <i class="material-icons resume-icons">home</i>
+                        Contact Info:
+                    </div>
+
+                    <div class="address contact">
+                        226 Chase Drive <br>
+                        Somerdale, NJ 08083
+                    </div>
+
+                    <div class="phoneNumber contact">
+                        (856)383-7203
+                    </div>
+
+                    <div class="emailAddress contact">
+                        <!-- [style.textTransform]="'lowercase'" -->
+                        rolandolloyd@gmail.com
+                    </div>
+
+                    <div class="website contact">
+                        RLloydGonzales.com
+                    </div>
+
+                </div>
+
+                <!-- EDUCATION -->
+                <div class="edu-kontainer">
+
+                    <div class="header education-header">
+                        <i class="material-icons resume-icons">school</i>
+                        Education:
+                    </div>
+
+                    <div class="pratt school">
+                        PRATT Institute <br>
+                        New York, N.Y.
+                    </div>
+
+                    <div class="feu school">
+                        Far Eastern University <br>
+                        Manila, Philippines
+                    </div>
+
+                </div>
+
+                <!-- SOCIAL -->
+                <div class="social-kontainer">
+                    <div class="header social-header">
+                        <i class="material-icons resume-icons">group</i>
+                        Social Medias:
+                    </div>
+                    <div class="social-icon-wrapper">
+                        <div *ngFor="let social of aSocialMediaData; let i = index" class="socials">
+                            <div class="{{ social.icon }}">
+                                <span class="social-icon-title" [ngStyle]="fNgStyleTech()"> {{ social.tech }} </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TECHNOLOGY -->
+                <div class="tech-kontainer">
+                    <div class="header tech-header">
+                        <i class="material-icons resume-icons">computer</i>
+                        Technology:
+                    </div>
+                    <div *ngFor="let technology of aTechnologiesData; let i = index" class="tech">
+                        <hr />
+                        <div class="{{ technology.icon }}">
+                            <span class="tech-icon-title" [ngStyle]="fNgStyleTech()"> {{ technology.tech }} </span>
+                        </div>
+                    </div>
+
+                    <!-- SIDE MENU: GD LOGO -->
+                    <div class="gd-logo-container">
+                        <i class="gd-logo"></i>
+                    </div>
+                    <div class="gd-logo-title">
+                        GONZALES DESIGN
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="right-kontainer" [style.width.%]="'70'" [style.paddingLeft.px]="'0'"
+            [style.border]="'0px solid purple'">
+
+            <app-experience></app-experience>
+
+
+
+        </div>
+
+
+    </div>
 
 </div>
